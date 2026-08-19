@@ -1,0 +1,582 @@
+{
+  "description": "Coordenadas auditadas para enlaces de Operaciones_ult_semana.",
+  "entries": {
+    "https://goo.gl/maps/hD1QaqZei8hNKnUy5?g_st=aw": {
+      "id_operacion": "3652852",
+      "lat": 4.32651154726932,
+      "lon": -74.3964692705562,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/2TZH47f4N86NTjSb6?g_st=ic": {
+      "id_operacion": "3652756",
+      "lat": 4.69835144639272,
+      "lon": -74.0434040999974,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/2ZJ6y54pUYk9vjcF6?g_st=ac": {
+      "id_operacion": "3696960",
+      "lat": 4.6533817,
+      "lon": -74.0836331,
+      "source": "Dirección geocodificada (respaldo)"
+    },
+    "https://maps.app.goo.gl/37dHFgR4RCV1TvPe8?g_st=ic": {
+      "id_operacion": "3652807",
+      "lat": 4.69701672121733,
+      "lon": -74.0440968086624,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/3zpfDx5Jekfv4v86A?g_st=ac": {
+      "id_operacion": "3680055",
+      "lat": 4.6990162,
+      "lon": -74.0695661,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/4XVD4C94joAnoLQU8?g_st=aw": {
+      "id_operacion": "3656243",
+      "lat": 4.29766495199732,
+      "lon": -74.8047796441808,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/5bYucWhBPLEHru7D8": {
+      "id_operacion": "3656464",
+      "lat": 4.74231626973366,
+      "lon": -74.0474216269842,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/5mWFmMDmeqUZdebx5?g_st=ac": {
+      "id_operacion": "3687254",
+      "lat": 4.69097,
+      "lon": -74.10288299999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/6YBR9JYLZWtzb83y7?g_st=ac": {
+      "id_operacion": "3679961",
+      "lat": 4.6688068,
+      "lon": -74.0796079,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/7u7woAW25HSBe6hF7": {
+      "id_operacion": "",
+      "lat": 3.4685692,
+      "lon": -76.5249844,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/8ZCCS79gfk7pGP9C6?g_st=iw": {
+      "id_operacion": "3653008",
+      "lat": 4.81011690106204,
+      "lon": -74.3502240000089,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/8mb4UcCPc2SYD4bm7": {
+      "id_operacion": "3687233",
+      "lat": 4.6970252,
+      "lon": -74.04330399999999,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/8ydjruyoHP8sGb538": {
+      "id_operacion": "3696961",
+      "lat": 4.7287362,
+      "lon": -74.0413295,
+      "source": "Dirección geocodificada (respaldo)"
+    },
+    "https://maps.app.goo.gl/974Kc9pnwF5W8VPB9?g_st=aw": {
+      "id_operacion": "3683610",
+      "lat": 4.581873799999999,
+      "lon": -74.09698449999999,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/9gYzbHpcbRQwNBec9?g_st=ac": {
+      "id_operacion": "3671243",
+      "lat": 4.6939243,
+      "lon": -74.0471556,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/9rC2X5676JGMq3sp8?g_st=iw": {
+      "id_operacion": "3652942",
+      "lat": 4.5281867,
+      "lon": -75.6771695,
+      "source": "Dirección del enlace geocodificada"
+    },
+    "https://maps.app.goo.gl/9xoNxA6hMPpPfmUY7": {
+      "id_operacion": "3687074",
+      "lat": 3.899173,
+      "lon": -76.3008876,
+      "source": "Dirección del enlace geocodificada"
+    },
+    "https://maps.app.goo.gl/ARHY4pjoMEGefriy5?g_st=iw": {
+      "id_operacion": "3649288",
+      "lat": 4.74025395226947,
+      "lon": -74.0478017282885,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/AhW911b84Yas6EB19?g_st=aw": {
+      "id_operacion": "3696844",
+      "lat": 4.7041905,
+      "lon": -74.0487108,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/BKx91rDJ4CJKfCNt7?g_st=ac": {
+      "id_operacion": "3680054",
+      "lat": 4.7384451,
+      "lon": -74.1055841,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/BS9YHfeBx8LigNK16?g_st=aw": {
+      "id_operacion": "3683298",
+      "lat": 4.8082978,
+      "lon": -75.68833889999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/BeTGCR24bq6FqSRe8?g_st=ac": {
+      "id_operacion": "3680050",
+      "lat": 4.7389192,
+      "lon": -74.0862843,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/DJBmRXqQasd2Vk147": {
+      "id_operacion": "3693642",
+      "lat": 4.099917,
+      "lon": -72.9088133,
+      "source": "Dirección geocodificada (respaldo)"
+    },
+    "https://maps.app.goo.gl/DcaXAMLmX1ce6YETA?g_st=ac": {
+      "id_operacion": "3690630",
+      "lat": 4.755548999999999,
+      "lon": -75.92845059999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/DsZejbLUvxEXoxAA6?g_st=awb": {
+      "id_operacion": "3656520",
+      "lat": 4.80356098147763,
+      "lon": -75.6909271715195,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/EUrAa2jcRimMkemN6": {
+      "id_operacion": "3676345",
+      "lat": 7.069229,
+      "lon": -73.858897,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/EyCAWArR3m9TpYUx7?g_st=ac": {
+      "id_operacion": "3679980",
+      "lat": 4.675717,
+      "lon": -74.0881108,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/FbPpk8UWb766FAqY8?g_st=ic": {
+      "id_operacion": "3652812",
+      "lat": 4.69764723688395,
+      "lon": -74.0459032415071,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/Fqt5xWrLJWy62G8s6?g_st=iwb": {
+      "id_operacion": "3676247",
+      "lat": 7.114871399999999,
+      "lon": -73.2246189,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/FtHvRa2r8ixdKF4D6?g_st=ac": {
+      "id_operacion": "3687238",
+      "lat": 4.720626,
+      "lon": -74.0895046,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/H38s6ufbLT2AYCts9?g_st=ac": {
+      "id_operacion": "3696981",
+      "lat": 4.6780306,
+      "lon": -74.0469451,
+      "source": "Dirección geocodificada (respaldo)"
+    },
+    "https://maps.app.goo.gl/HzUx1Jk4129XH5uB8": {
+      "id_operacion": "3687264",
+      "lat": 4.6757957999999995,
+      "lon": -74.0845375,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/JSyt4qJYuenXjgtm6": {
+      "id_operacion": "3676236",
+      "lat": 4.6963948,
+      "lon": -74.1065598,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/JrkTt1eXML1QMxUc8": {
+      "id_operacion": "3687196",
+      "lat": 4.764352,
+      "lon": -75.6869794,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/M7GS1t882L9X2s5X7?g_st=ac": {
+      "id_operacion": "3656588",
+      "lat": 4.70323299753303,
+      "lon": -74.0540215981903,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/MUSPvnJZHx1MypYo7?g_st=ac": {
+      "id_operacion": "3690581",
+      "lat": 4.6329064,
+      "lon": -74.0799179,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/PE1f4S4YcVUUo6e98?g_st=ac": {
+      "id_operacion": "3683348",
+      "lat": 4.68285,
+      "lon": -74.0445603,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/PMevYe65TjPxJGpC6?g_st=ac": {
+      "id_operacion": "3687255",
+      "lat": 4.6279511,
+      "lon": -74.1715317,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/PhzXtYjgkKMemPb39?g_st=iw": {
+      "id_operacion": "3652991",
+      "lat": 4.80776995375291,
+      "lon": -74.3498237283534,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/PxTZKoG3Fzs2hRSV6?g_st=ac": {
+      "id_operacion": "3687232",
+      "lat": 4.7187059,
+      "lon": -74.09093709999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/QBWShgaJxsi6X6WG7": {
+      "id_operacion": "3649582",
+      "lat": 4.81340065449673,
+      "lon": -75.699304830684,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/QEQfuLMTfSvDtyZS7?g_st=ac": {
+      "id_operacion": "3656477",
+      "lat": 4.52351510006705,
+      "lon": -74.1236545755953,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/RXJBFg5X1vNJ3zZ66?g_st=iw": {
+      "id_operacion": "3653140",
+      "lat": 4.67103715339355,
+      "lon": -74.1063938693131,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/RdznzFN8oeXt4BzY8?g_st=iw": {
+      "id_operacion": "3649297",
+      "lat": 4.74877324221651,
+      "lon": -74.0441775661929,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/Re2hX3yEGKe3qDFh6": {
+      "id_operacion": "3676210",
+      "lat": 4.5754394,
+      "lon": -74.10195209999999,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/TCHUdwg6A8YgVuCz5?g_st=ac": {
+      "id_operacion": "3680011",
+      "lat": 4.7369435,
+      "lon": -74.08524489999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/TdvwVtmu8SPa2Ycw8?g_st=ac": {
+      "id_operacion": "3696742",
+      "lat": 4.099917,
+      "lon": -72.9088133,
+      "source": "Dirección geocodificada (respaldo)"
+    },
+    "https://maps.app.goo.gl/U51zZk2Qhyu1RYGE8?g_st=ac": {
+      "id_operacion": "3671223",
+      "lat": 4.7397912,
+      "lon": -74.0397576,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/UgKek3eZnzV3KFSy6": {
+      "id_operacion": "3653092",
+      "lat": 4.62141507720677,
+      "lon": -74.0680167000001,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/W19H25CexMXZWCyc8?g_st=aw": {
+      "id_operacion": "3696848",
+      "lat": 4.709647299999999,
+      "lon": -74.0616332,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/WCjMYbsnnYidbw3m6?g_st=ac": {
+      "id_operacion": "3696979",
+      "lat": 4.6777068,
+      "lon": -74.046774,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/WcJZpZR1WDn3aMew7?g_st=ac": {
+      "id_operacion": "3686736",
+      "lat": 4.672761,
+      "lon": -74.1055908,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/We16jmS8NyUGf58B9?g_st=ac": {
+      "id_operacion": "",
+      "lat": 4.6975895,
+      "lon": -74.0458554,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/XKjbjeAS9omZeFTB7?g_st=iw": {
+      "id_operacion": "3652948",
+      "lat": 4.81804668166307,
+      "lon": -74.3584228790501,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/XQdTnYufh5YeLTcXA?g_st=ac": {
+      "id_operacion": "3679995",
+      "lat": 4.623984399999999,
+      "lon": -74.1430737,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/YQ3EaDo6RE4ZJ3wy8?g_st=aw": {
+      "id_operacion": "3696850",
+      "lat": 4.6977681,
+      "lon": -74.0459625,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/YkLLtdtkCjYSog6J7?g_st=ac": {
+      "id_operacion": "3671242",
+      "lat": 4.687790199999999,
+      "lon": -74.0619129,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/ZQgrkgw8KHzSeLA8A?g_st=iw": {
+      "id_operacion": "3649592",
+      "lat": 4.80821064554015,
+      "lon": -75.6882303999996,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/ZgYr7gZUWwWBfsNb6?g_st=ic": {
+      "id_operacion": "3652749",
+      "lat": 4.63943295015559,
+      "lon": -74.0651127282858,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/Zs8Bp3Xwscm3Lyq39": {
+      "id_operacion": "3656652",
+      "lat": 4.75169172990319,
+      "lon": -74.0863461865138,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/a95PSeawc8zDeAyD7": {
+      "id_operacion": "3649609",
+      "lat": 5.00090728811792,
+      "lon": -73.9991672620913,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/b131Rb364e84ymVp7?g_st=ac": {
+      "id_operacion": "3690631",
+      "lat": 4.755548999999999,
+      "lon": -75.92845059999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/bgEumNMMgswLuWug8": {
+      "id_operacion": "3687227",
+      "lat": 4.6914009,
+      "lon": -74.0996005,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/crfJcUJxJcrVFGAw8?g_st=awb": {
+      "id_operacion": "3656577",
+      "lat": 4.80141992797882,
+      "lon": -75.8416076288501,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/cyi7f3fML7fKbAXTA": {
+      "id_operacion": "3649449",
+      "lat": 4.81486842730551,
+      "lon": -75.6940043742773,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/dmeiK9Y56iBqfb7k6?g_st=ac": {
+      "id_operacion": "3671239",
+      "lat": 4.6909602,
+      "lon": -74.06615719999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/e6zYrkzXtHa5ac9T9?g_st=iw": {
+      "id_operacion": "3676323",
+      "lat": 7.136143,
+      "lon": -73.1249839,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/fo9rHJK6f2fgyKv67?g_st=ac": {
+      "id_operacion": "3690627",
+      "lat": 4.755548999999999,
+      "lon": -75.92845059999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/hh9DqoKdf3dEj9zaA?g_st=ac": {
+      "id_operacion": "3671230",
+      "lat": 4.7542339,
+      "lon": -74.0325201,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/iQjt8Ebm6H8CuvqJ8?g_st=ac": {
+      "id_operacion": "3683607",
+      "lat": 4.6442646,
+      "lon": -74.1210425,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/j5WYVr4kxC7cGkAD7?g_st=ac": {
+      "id_operacion": "3690583",
+      "lat": 4.6818166,
+      "lon": -74.0894775,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/jdeQFRYYpEDtfF3c8": {
+      "id_operacion": "3687230",
+      "lat": 4.6982979,
+      "lon": -74.0433206,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/kAT7PsDEWgBy4ckM7?g_st=aw": {
+      "id_operacion": "3676328",
+      "lat": 7.0359272,
+      "lon": -73.0685891,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/kzskW8qdvmWNrmtU8?g_st=iw": {
+      "id_operacion": "3687205",
+      "lat": 4.8167677,
+      "lon": -75.7117227,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/mPEriJi82CJKdctc8?g_st=ac": {
+      "id_operacion": "3683612",
+      "lat": 4.6009671,
+      "lon": -74.09813199999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/mWPt1WTFKARjgwHP6?g_st=ac": {
+      "id_operacion": "3671222",
+      "lat": 4.7486337,
+      "lon": -74.04423369999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/nkuWwF8dxLDuY6YZ9?g_st=ac": {
+      "id_operacion": "3671245",
+      "lat": 4.6953911,
+      "lon": -74.0503134,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/p5zUjk4WGLsFS4F36?g_st=ac": {
+      "id_operacion": "3671241",
+      "lat": 4.6879591,
+      "lon": -74.0619506,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/qQ9pDY39yvugjvXw6?g_st=ac": {
+      "id_operacion": "3690591",
+      "lat": 4.7051768,
+      "lon": -74.0924072,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/qVPDTGyYWwahjkAp7?g_st=ac": {
+      "id_operacion": "3687128",
+      "lat": 4.6791449,
+      "lon": -74.0544281,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/qaYbvGnqLY1HZztv8": {
+      "id_operacion": "3653000",
+      "lat": 4.62897995917814,
+      "lon": -74.1149220000286,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/roHspvGqX4kLWBoAA?g_st=ic": {
+      "id_operacion": "3652752",
+      "lat": 4.70132118994178,
+      "lon": -74.0478800000003,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/sp3HP2ypsAHPXyC38": {
+      "id_operacion": "3697029",
+      "lat": 4.5224519,
+      "lon": -74.1156096,
+      "source": "Dirección geocodificada (respaldo)"
+    },
+    "https://maps.app.goo.gl/sq7pMrES6283SMyr6?g_st=ac": {
+      "id_operacion": "3671208",
+      "lat": 4.781809099999999,
+      "lon": -74.04200469999999,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/tguqLex5RC5W2E976?g_st=ac": {
+      "id_operacion": "3676125",
+      "lat": 7.0868028999999995,
+      "lon": -73.1182663,
+      "source": "Enlace de mapa: ficha de Google validada"
+    },
+    "https://maps.app.goo.gl/uNEnpfgoDAbeptMD7?g_st=ac": {
+      "id_operacion": "3652790",
+      "lat": 4.56084585753043,
+      "lon": -74.1260137366193,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/wbcjBnHS4KwUYnNN9?g_st=ac": {
+      "id_operacion": "3679984",
+      "lat": 4.6756378,
+      "lon": -74.0878369,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/xG4YUUbdmJKMJHGW8?g_st=aw": {
+      "id_operacion": "3668119",
+      "lat": 5.0277888,
+      "lon": -73.9987524,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/xLtFdzwmwgZb9LkR8?g_st=ac": {
+      "id_operacion": "3690509",
+      "lat": 3.3581379,
+      "lon": -76.5234705,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/xqXqLXgy7UCyB6pz9?g_st=ac": {
+      "id_operacion": "3653143",
+      "lat": 4.69832534640682,
+      "lon": -74.0433192000106,
+      "source": "Columnas Y/X de Operaciones"
+    },
+    "https://maps.app.goo.gl/ycEJu2jwy79qR4py8?g_st=ac": {
+      "id_operacion": "3671253",
+      "lat": 4.6975726,
+      "lon": -74.0457662,
+      "source": "Enlace de mapa: redirección resuelta"
+    },
+    "https://maps.app.goo.gl/zSQCn9i6jww5XLox7?g_st=aw": {
+      "id_operacion": "3696824",
+      "lat": 50.3768456,
+      "lon": -119.0534955,
+      "source": "Dirección del enlace geocodificada"
+    },
+    "https://share.google/CPQ8CQuA70rGqPrMw": {
+      "id_operacion": "3680024",
+      "lat": 4.7854606,
+      "lon": -75.788322,
+      "source": "Dirección geocodificada (respaldo)"
+    },
+    "https://waze.com/ul?a=share_drive&locale=en&sd=8V1N9lyGxeYy2cyyFQ-sd&env=row&utm_source=waze_app&utm_campaign=share_drive": {
+      "id_operacion": "3690504",
+      "lat": 4.5800291,
+      "lon": -74.1269203,
+      "source": "Dirección geocodificada (respaldo)"
+    },
+    "https://www.bing.com/maps/search?mepi=0%7ERetail%7EEmbedded%7EEntity_Vertical_List_Card&ty=17&poicount=18&sei=0&FORM=MPSRPL&q=centro+comercial+ca%C3%B1averal+ubicaci%C3%B3n+maps&secq=Entrada+Principal+-+Centro+Comercial+Ca%C3%B1averal+centro+comercial+canaveral&sece=ypid.YN7758855A916B70D8&ppois=7.071527481079102_-73.10704040527344_Entrada+Secundaria+-+Centro+Comercial+Ca%C3%B1averal_YNC4544A33189FF34C%7E7.0705718994140625_-73.10617065429688_Entrada+Principal+-+Centro+Comercial+Ca%C3%B1averal_YN7758855A916B70D8%7E&segment=Retail&cp=7.070572%7E-73.106171&lvl=7&style=r": {
+      "id_operacion": "3683591",
+      "lat": 7.071527481079102,
+      "lon": -73.10704040527344,
+      "source": "Enlace de mapa: coordenadas explícitas"
+    },
+    "https://www.bing.com/maps/search?mepi=0%7ERetail%7EEmbedded%7EEntity_Vertical_List_Card&ty=17&poicount=18&sei=0&FORM=MPSRPL&q=centro+comercial+ca%C3%B1averal+ubicacion+maps&secq=Entrada+Principal+-+Centro+Comercial+Ca%C3%B1averal+centro+comercial+canaveral&sece=ypid.YN7758855A916B70D8&ppois=7.0705718994140625_-73.10617065429688_Entrada+Principal+-+Centro+Comercial+Ca%C3%B1averal_YN7758855A916B70D8%7E7.071527481079102_-73.10704040527344_Entrada+Secundaria+-+Centro+Comercial+Ca%C3%B1averal_YNC4544A33189FF34C%7E&segment=Retail&cp=7.070572%7E-73.106171&lvl=11&style=r": {
+      "id_operacion": "3649249",
+      "lat": 7.07063742772423,
+      "lon": -73.1055283291178,
+      "source": "Columnas Y/X de Operaciones"
+    }
+  },
+  "schema_version": 1
+}
