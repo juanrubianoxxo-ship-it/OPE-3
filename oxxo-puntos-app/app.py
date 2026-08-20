@@ -60,6 +60,28 @@ def _comparar_nombre_con_base(nombre, df, columna_nombre, etiqueta, threshold, i
     return {"fuente": etiqueta, "nombre": str(fila_mejor.get(columna_nombre, nombre_mejor)), "score": int(round(score)), "posible": bool(score >= threshold)}
 
 
+def buscar_coincidencias_nombre(nombre, operaciones_df, tiendas_df, puntos_potenciales_df, threshold, id_actual=None):
+    """Devuelve las coincidencias fuertes del nombre contra las tres bases."""
+    resultados = []
+    fuentes = [
+        ("Operaciones_ult_semana", operaciones_df, "Nombre del Punto"),
+        ("Book.xlsx · tiendas vigentes", tiendas_df, "NAME"),
+        ("Puntos_Potenciales.xlsx", puntos_potenciales_df, "Nombre PP"),
+    ]
+    for fuente, base, columna in fuentes:
+        coincidencia = _comparar_nombre_con_base(
+            nombre, base, columna, fuente, threshold, id_actual=id_actual
+        )
+        if coincidencia["posible"]:
+            resultados.append({
+                "Base": fuente,
+                "Nombre coincidente": coincidencia["nombre"],
+                "Similitud": f"{coincidencia['score']}%",
+                "Score_num": coincidencia["score"],
+            })
+    return sorted(resultados, key=lambda fila: fila["Score_num"], reverse=True)
+
+
 def agregar_alertas_duplicados(match_df, operaciones_df, puntos_potenciales_df, threshold):
     resultado = match_df.copy()
     ops, pps, resumenes = [], [], []
@@ -571,6 +593,31 @@ else:
         placeholder=f"Nombre actual: {seleccion}",
         key=f"nuevo_nombre_{id_punto}",
     )
+
+    if nuevo_nombre.strip():
+        coincidencias_nuevo = buscar_coincidencias_nombre(
+            nuevo_nombre,
+            visitas_full,
+            tiendas,
+            puntos_potenciales,
+            threshold,
+            id_actual=id_punto,
+        )
+        if coincidencias_nuevo:
+            st.warning(
+                f"⚠️ El nombre nuevo tiene {len(coincidencias_nuevo)} posible(s) duplicado(s) "
+                f"con similitud igual o superior al umbral de {threshold}%.")
+            st.dataframe(
+                pd.DataFrame(coincidencias_nuevo)[
+                    ["Base", "Nombre coincidente", "Similitud"]
+                ],
+                use_container_width=True,
+                hide_index=True,
+            )
+        else:
+            st.success(
+                f"✅ No se encontraron coincidencias fuertes con las tres bases "
+                f"usando el umbral de {threshold}%.")
 
     col_info, col_foto = st.columns([1.1, 1])
 
