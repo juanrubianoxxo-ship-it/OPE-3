@@ -958,11 +958,23 @@ else:
     # -------------------------------------------------- Descargar informe --
     st.divider()
     st.subheader("📄 Informe del punto")
+    jefes_operaciones = [
+        "PEDRO MORENO SUAREZ",
+        "JUAN QUIROGA",
+        "DIEGO RODRIGUEZ ESTEBAN",
+        "YESENIA ARIZTIZABAL ALZATE",
+    ]
+    jefe_operaciones = st.selectbox(
+        "Jefe de operaciones",
+        options=jefes_operaciones,
+        key=f"jefe_operaciones_{id_punto}",
+    )
 
     pdf_bytes = generar_informe_pdf(
         datos=fila_visita.to_dict(),
         nombre_original=seleccion,
         nombre_nuevo=nuevo_nombre,
+        jefe_operaciones=jefe_operaciones,
         fotos=fotos,
         lat=lat,
         lon=lon,
