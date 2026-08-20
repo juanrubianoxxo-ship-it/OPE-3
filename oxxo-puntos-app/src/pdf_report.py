@@ -187,6 +187,7 @@ def generar_informe_pdf(
     lat: Optional[float] = None,
     lon: Optional[float] = None,
     tiendas_cercanas: Optional[list[dict]] = None,
+    jefe_operaciones: Optional[str] = None,
 ) -> bytes:
     """Construye el informe en memoria y devuelve los bytes del PDF."""
     buffer = io.BytesIO()
@@ -251,8 +252,10 @@ def generar_informe_pdf(
     nombre_original = _texto(nombre_original)
     nombre_nuevo = _texto(nombre_nuevo)
     estado_growth = _texto(datos.get("Estado Growth", "")) or "Sin estado informado"
+    jefe_operaciones = _texto(jefe_operaciones) or "Sin jefe seleccionado"
     story.append(_tabla_estandar(
         [[Paragraph("PUNTO EVALUADO", etiqueta), Paragraph(html.escape(nombre_original) or "Sin nombre", normal)],
+         [Paragraph("JEFE DE OPERACIONES", etiqueta), Paragraph(html.escape(jefe_operaciones), normal)],
          [Paragraph("ESTADO GROWTH", etiqueta), Paragraph(html.escape(estado_growth), normal)]],
         [4.2 * cm, 11.3 * cm],
     ))
