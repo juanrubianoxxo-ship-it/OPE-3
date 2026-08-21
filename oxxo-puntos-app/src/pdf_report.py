@@ -255,7 +255,7 @@ def generar_informe_pdf(
     jefe_operaciones = _texto(jefe_operaciones) or "Sin jefe seleccionado"
     story.append(_tabla_estandar(
         [[Paragraph("PUNTO EVALUADO", etiqueta), Paragraph(html.escape(nombre_original) or "Sin nombre", normal)],
-         [Paragraph("JEFE DE OPERACIONES", etiqueta), Paragraph(html.escape(jefe_operaciones), normal)],
+         [Paragraph("REGIONAL VIABILIZADOR", etiqueta), Paragraph(html.escape(jefe_operaciones), normal)],
          [Paragraph("ESTADO GROWTH", etiqueta), Paragraph(html.escape(estado_growth), normal)]],
         [4.2 * cm, 11.3 * cm],
     ))
