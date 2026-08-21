@@ -965,7 +965,7 @@ else:
         "YESENIA ARIZTIZABAL ALZATE",
     ]
     jefe_operaciones = st.selectbox(
-        "Jefe de operaciones",
+        "Regional Viabilizador",
         options=jefes_operaciones,
         key=f"jefe_operaciones_{id_punto}",
     )
