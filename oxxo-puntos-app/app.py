@@ -774,9 +774,15 @@ else:
 
         # --- 1. Punto evaluado (selección actual) ---
         if tiene_coordenadas_punto:
-            st.success(
-                f"✅ Coordenadas extraídas del Maps · lat: {lat:.6f}, lon: {lon:.6f}."
-            )
+            fuente_punto = str(fila_visita.get("fuente_coordenadas", "Enlace de Maps"))
+            if "Enlace de mapa" in fuente_punto or "Maps" in fuente_punto:
+                st.success(
+                    f"✅ Pin de Maps utilizado · lat: {lat:.6f}, lon: {lon:.6f}."
+                )
+            else:
+                st.warning(
+                    f"⚠️ Punto ubicado con respaldo ({fuente_punto}) · lat: {lat:.6f}, lon: {lon:.6f}."
+                )
             popup_evaluado = folium.Popup(
                 "<b>📍 " + html.escape(str(seleccion)) + "</b><br>"
                 "Jefe de zona: " + html.escape(str(fila_visita.get("Jefe de zona", ""))) + "<br>"
