@@ -387,9 +387,10 @@ def get_coordinates(maps_link: str, address: str = "") -> tuple[float | None, fl
     if direct:
         return direct[0], direct[1], "Enlace de mapa: coordenadas explícitas"
 
-    # No usamos la caché auditada aquí: puede contener coordenadas antiguas
-    # provenientes de X/Y o de una dirección. Para Operaciones, la precisión
-    # debe depender del enlace actual que viene en el Excel.
+    cached = _cached_coordinates(link)
+    if cached:
+        return cached
+
     final_link = link
     if link and _should_follow_redirects(link):
         final_link = resolve_map_link(link)
@@ -403,13 +404,23 @@ def get_coordinates(maps_link: str, address: str = "") -> tuple[float | None, fl
     if google_place:
         return google_place[0], google_place[1], "Enlace de mapa: ficha de Google validada"
 
-    # No geocodificamos nombres ni direcciones como sustituto: eso puede
-    # colocar el punto en el centro de una ciudad o en un negocio cercano.
-    # Si Google no expone un pin en el enlace, el registro queda diagnosticado
-    # y no se dibuja en una ubicación falsa.
+    # Google suele entregar q=<dirección>&ftid=<identificador> en vez de
+    # coordenadas. La búsqueda viene del propio enlace y es más específica que
+    # una dirección opcional de la hoja, por lo que se prueba primero.
+    link_address = _map_query_as_address(final_link)
+    if link_address:
+        coordinates = geocode_address(link_address)
+        if coordinates:
+            return coordinates[0], coordinates[1], "Dirección del enlace geocodificada"
+
+    if address and str(address).strip():
+        coordinates = geocode_address(str(address))
+        if coordinates:
+            return coordinates[0], coordinates[1], "Dirección geocodificada (respaldo)"
+
     if not link:
-        return None, None, "Sin enlace de Maps"
-    return None, None, "El enlace no expone un pin con coordenadas"
+        return None, None, "Sin enlace ni dirección utilizable"
+    return None, None, "No se obtuvieron coordenadas válidas del enlace"
 
 
 def get_coordinates_batch(
