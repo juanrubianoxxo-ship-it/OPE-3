@@ -299,11 +299,12 @@ def _read_excel_hyperlink_targets() -> tuple[dict[int, str], str | None]:
 
 
 def _add_visit_coordinates(df: pd.DataFrame) -> tuple[str | None, str | None]:
-    """Ubica Operaciones exclusivamente con el enlace de Google Maps.
+    """Ubica Operaciones priorizando el pin real del enlace de Maps.
 
-    No se usan las columnas X/Y, la dirección ni coordenadas previamente
-    almacenadas en caché. Esto evita que un punto termine en una ubicación
-    distinta a la del enlace que viene en ``Operaciones_ult_semana``.
+    Primero se intenta resolver cada enlace actual de Google Maps, incluidos
+    hipervínculos ocultos y enlaces cortos. Sólo los registros que no exponen
+    un pin se completan con X/Y o dirección, dejando la fuente auditada para
+    no confundir una aproximación con una coordenada del enlace.
     """
     maps_col = _find_maps_column(list(df.columns))
     address_col = _find_address_column(list(df.columns))
@@ -322,7 +323,6 @@ def _add_visit_coordinates(df: pd.DataFrame) -> tuple[str | None, str | None]:
     df["fuente_coordenadas"] = pd.Series("Sin enlace de Maps", index=df.index, dtype="object")
     df["enlace_maps_leido"] = pd.Series("", index=df.index, dtype="object")
 
-    # Lee el destino real de hipervínculos, fórmulas HYPERLINK y texto visible.
     excel_targets: dict[int, str] = {}
     try:
         excel_targets, _ = _read_excel_hyperlink_targets()
@@ -336,9 +336,8 @@ def _add_visit_coordinates(df: pd.DataFrame) -> tuple[str | None, str | None]:
         df["enlace_maps_leido"] = effective_links
         df[maps_col] = effective_links
 
-    # Cada registro se resuelve exclusivamente desde su link. La dirección se
-    # envía vacía intencionalmente para impedir una ubicación aproximada.
-    from src.maps_utils import get_coordinates_batch
+    from src.maps_utils import get_coordinates_batch, geocode_address
+
     records = [
         (index, _cell_to_text(row.get("enlace_maps_leido", "")), "")
         for index, row in df.iterrows()
@@ -349,11 +348,33 @@ def _add_visit_coordinates(df: pd.DataFrame) -> tuple[str | None, str | None]:
             df.at[index, "lon"] = longitude
         df.at[index, "fuente_coordenadas"] = source
 
+    # Cobertura adicional: sólo se usa X/Y cuando el link no pudo entregar un
+    # pin. El enlace sigue siendo la fuente prioritaria y no se reemplaza.
+    unresolved = df["lat"].isna() | df["lon"].isna()
+    if unresolved.any() and "Y" in df.columns and "X" in df.columns:
+        latitude_xy = pd.to_numeric(df["Y"], errors="coerce")
+        longitude_xy = pd.to_numeric(df["X"], errors="coerce")
+        xy_valid = latitude_xy.between(-90, 90) & longitude_xy.between(-180, 180)
+        use_xy = unresolved & xy_valid
+        df.loc[use_xy, "lat"] = latitude_xy.loc[use_xy]
+        df.loc[use_xy, "lon"] = longitude_xy.loc[use_xy]
+        df.loc[use_xy, "fuente_coordenadas"] = "Respaldo X/Y: el enlace no expuso pin"
+
+    # Último respaldo para maximizar la cobertura, siempre etiquetado.
+    unresolved = df["lat"].isna() | df["lon"].isna()
+    if unresolved.any() and address_col:
+        for index, address in df.loc[unresolved, address_col].items():
+            coordinates = geocode_address(_cell_to_text(address))
+            if coordinates:
+                df.at[index, "lat"] = coordinates[0]
+                df.at[index, "lon"] = coordinates[1]
+                df.at[index, "fuente_coordenadas"] = "Respaldo por dirección: el enlace no expuso pin"
+
     valid = df["lat"].between(-90, 90) & df["lon"].between(-180, 180)
     df.loc[~valid, ["lat", "lon"]] = float("nan")
     df["ubicacion_mapeable"] = valid
     df["diagnostico_ubicacion"] = df["fuente_coordenadas"].where(
-        valid, df["fuente_coordenadas"].replace("Sin enlace de Maps", "Sin coordenadas válidas del enlace")
+        valid, "Sin coordenadas válidas"
     )
     return maps_col, address_col
 
