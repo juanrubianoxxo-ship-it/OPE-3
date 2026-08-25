@@ -299,39 +299,34 @@ def _read_excel_hyperlink_targets() -> tuple[dict[int, str], str | None]:
 
 
 def _add_visit_coordinates(df: pd.DataFrame) -> tuple[str | None, str | None]:
-    """Agrega ``lat``/``lon`` y auditoría de la fuente de cada ubicación.
+    """Ubica Operaciones exclusivamente con el enlace de Google Maps.
 
-    La prioridad es: columnas explícitas Y/X válidas, enlace de mapa real
-    (incluido el destino de hipervínculos de Excel) y, por último,
-    geocodificación de dirección. Un registro sólo se considera mapeable si
-    dispone de **ambas** coordenadas dentro de rangos geográficos válidos.
+    No se usan las columnas X/Y, la dirección ni coordenadas previamente
+    almacenadas en caché. Esto evita que un punto termine en una ubicación
+    distinta a la del enlace que viene en ``Operaciones_ult_semana``.
     """
     maps_col = _find_maps_column(list(df.columns))
     address_col = _find_address_column(list(df.columns))
 
-    # Conservar una columna estándar para el botón y el detalle de la app.
     if maps_col and maps_col != MAPS_COLUMN_STD:
         if MAPS_COLUMN_STD not in df.columns:
             df.rename(columns={maps_col: MAPS_COLUMN_STD}, inplace=True)
-            maps_col = MAPS_COLUMN_STD
         else:
             df[MAPS_COLUMN_STD] = df[MAPS_COLUMN_STD].where(
                 df[MAPS_COLUMN_STD].notna(), df[maps_col]
             )
-            maps_col = MAPS_COLUMN_STD
+        maps_col = MAPS_COLUMN_STD
 
     df["lat"] = pd.Series(float("nan"), index=df.index, dtype="float64")
     df["lon"] = pd.Series(float("nan"), index=df.index, dtype="float64")
-    df["fuente_coordenadas"] = pd.Series("Sin coordenadas", index=df.index, dtype="object")
+    df["fuente_coordenadas"] = pd.Series("Sin enlace de Maps", index=df.index, dtype="object")
     df["enlace_maps_leido"] = pd.Series("", index=df.index, dtype="object")
 
-    # Extraer la URL real de hipervínculos, fórmulas y URLs escritas como texto.
+    # Lee el destino real de hipervínculos, fórmulas HYPERLINK y texto visible.
     excel_targets: dict[int, str] = {}
     try:
         excel_targets, _ = _read_excel_hyperlink_targets()
     except Exception:
-        # La columna visible todavía funciona como fuente de respaldo si el
-        # archivo contiene una extensión no soportada por openpyxl.
         excel_targets = {}
 
     if maps_col:
@@ -339,43 +334,26 @@ def _add_visit_coordinates(df: pd.DataFrame) -> tuple[str | None, str | None]:
         hyperlink_links = df["_fila_excel"].map(excel_targets).fillna("").map(_cell_to_text)
         effective_links = hyperlink_links.where(hyperlink_links.ne(""), visible_links)
         df["enlace_maps_leido"] = effective_links
-        # El detalle debe abrir la URL, no el texto visible del hipervínculo.
         df[maps_col] = effective_links
 
-    # Fuente 1: Y es latitud y X es longitud, pero sólo si ambos valores son
-    # válidos. Si uno falta, el enlace sí puede completar la ubicación.
-    if "Y" in df.columns and "X" in df.columns:
-        latitude_xy = pd.to_numeric(df["Y"], errors="coerce")
-        longitude_xy = pd.to_numeric(df["X"], errors="coerce")
-        xy_valid = latitude_xy.between(-90, 90) & longitude_xy.between(-180, 180)
-        df.loc[xy_valid, "lat"] = latitude_xy.loc[xy_valid]
-        df.loc[xy_valid, "lon"] = longitude_xy.loc[xy_valid]
-        df.loc[xy_valid, "fuente_coordenadas"] = "Columnas Y/X de Operaciones"
+    # Cada registro se resuelve exclusivamente desde su link. La dirección se
+    # envía vacía intencionalmente para impedir una ubicación aproximada.
+    from src.maps_utils import get_coordinates_batch
+    records = [
+        (index, _cell_to_text(row.get("enlace_maps_leido", "")), "")
+        for index, row in df.iterrows()
+    ]
+    for index, (latitude, longitude, source) in get_coordinates_batch(records).items():
+        if latitude is not None and longitude is not None:
+            df.at[index, "lat"] = latitude
+            df.at[index, "lon"] = longitude
+        df.at[index, "fuente_coordenadas"] = source
 
-    # Fuente 2 y 3: link real y dirección. Se atienden de forma acotada para
-    # que los  enlaces cortos no bloqueen el mapa durante una recarga.
-    needs_coordinates = df["lat"].isna() | df["lon"].isna()
-    if needs_coordinates.any():
-        from src.maps_utils import get_coordinates_batch
-
-        records = []
-        for index, row in df.loc[needs_coordinates].iterrows():
-            link = _cell_to_text(row.get("enlace_maps_leido", ""))
-            address = _cell_to_text(row.get(address_col, "")) if address_col else ""
-            records.append((index, link, address))
-
-        for index, (latitude, longitude, source) in get_coordinates_batch(records).items():
-            if latitude is not None and longitude is not None:
-                df.at[index, "lat"] = latitude
-                df.at[index, "lon"] = longitude
-            df.at[index, "fuente_coordenadas"] = source
-
-    # Un valor parcial, intercambiado o fuera de rango nunca llega al mapa.
     valid = df["lat"].between(-90, 90) & df["lon"].between(-180, 180)
     df.loc[~valid, ["lat", "lon"]] = float("nan")
     df["ubicacion_mapeable"] = valid
     df["diagnostico_ubicacion"] = df["fuente_coordenadas"].where(
-        valid, df["fuente_coordenadas"].replace("Sin coordenadas", "Sin coordenadas válidas")
+        valid, df["fuente_coordenadas"].replace("Sin enlace de Maps", "Sin coordenadas válidas del enlace")
     )
     return maps_col, address_col
 
